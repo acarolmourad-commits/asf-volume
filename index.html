@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ASF Volume — Calculadora de Prancha</title>
-<meta name="description" content="Calculadora interativa de volume ideal de prancha por peso e nível. Satélite do app ASF.">
-<style>:root{--p:#00a8cc;--pd:#0e2439;--g:#f4d03f}*{box-sizing:border-box;margin:0}body{font-family:system-ui,sans-serif;background:#f6fbfd;color:var(--pd)}nav{background:var(--pd);padding:9px 12px;display:flex;flex-wrap:wrap;gap:6px}nav a{color:#fff;text-decoration:none;font-size:11px;font-weight:600;padding:4px 8px;border-radius:20px;background:rgba(255,255,255,.08)}nav a.hub{background:var(--g);color:var(--pd)}header{padding:36px 20px;text-align:center;background:linear-gradient(135deg,#00a8cc22,#27ae6018)}h1{font-size:26px}main{max-width:560px;margin:22px auto;padding:0 16px}.card{background:#fff;border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.06)}label{font-size:12px;font-weight:600;color:#567;display:block;margin:10px 0 3px}input[type=range]{width:100%}.lv{display:flex;gap:6px}.lv button{flex:1;background:#fff;border:1.5px solid #dde;border-radius:10px;padding:9px;font-size:12px;font-weight:600;cursor:pointer}.lv button.on{border-color:var(--p);background:#00a8cc12;color:var(--p)}.result{text-align:center;padding:20px;background:linear-gradient(135deg,#00a8cc15,#f4d03f15);border-radius:14px}.result .v{font-size:44px;font-weight:800;color:var(--p)}footer{text-align:center;padding:26px;font-size:12px;color:#678}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASF Volume — ASF</title>
+<meta name="description" content="Calculadora interativa de volume ideal de prancha por peso e nível">
+<style>
+:root{--rosa:#ff4d8d;--roxo:#7b2ff7;--areia:#fff5ec;--mar:#00c2cb}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
+body{background:linear-gradient(160deg,#fff5ec,#ffe3f1 60%,#e0f7fa);min-height:100vh;color:#333}
+header{background:linear-gradient(90deg,var(--rosa),var(--roxo));color:#fff;padding:2rem 1rem;text-align:center}
+header h1{font-size:2rem} header p{opacity:.9;margin-top:.4rem}
+nav{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;padding:.8rem;background:#fff;box-shadow:0 2px 8px #0001;position:sticky;top:0;z-index:10}
+nav a{background:var(--areia);border:1px solid #ffd3e6;color:#c2185b;padding:.3rem .7rem;border-radius:20px;font-size:.78rem;text-decoration:none}
+nav a:hover{background:var(--rosa);color:#fff}
+main{max-width:760px;margin:1.5rem auto;padding:0 1rem}
+.card{background:#fff;border-radius:16px;padding:1.4rem;box-shadow:0 4px 16px #7b2ff720;margin-bottom:1.2rem}
+.card h2{color:var(--roxo);margin-bottom:.6rem;font-size:1.2rem}
+button{background:linear-gradient(90deg,var(--rosa),var(--roxo));color:#fff;border:none;padding:.6rem 1.2rem;border-radius:24px;font-size:1rem;cursor:pointer}
+button:hover{opacity:.85}
+input,select,textarea{padding:.5rem;border:1px solid #ddd;border-radius:10px;width:100%;margin:.3rem 0;font-size:1rem}
+.xp{position:fixed;bottom:1rem;right:1rem;background:#fff;border:2px solid var(--rosa);border-radius:24px;padding:.4rem 1rem;font-weight:bold;color:var(--roxo);box-shadow:0 4px 12px #0002}
+footer{text-align:center;padding:2rem;font-size:.8rem;color:#888}
+</style>
 </head>
 <body>
-<nav>
-<a class="hub" href="https://acarolmourad-commits.github.io/asf-app/">🏄‍♀️ ASF App</a>
-<a href="https://acarolmourad-commits.github.io/asf-previsao/">🌊</a>
-<a href="https://acarolmourad-commits.github.io/asf-praias/">🏖️</a>
-<a href="https://acarolmourad-commits.github.io/asf-treino/">💪</a>
-<a href="https://acarolmourad-commits.github.io/asf-eventos/">📅</a>
-<a href="https://acarolmourad-commits.github.io/asf-glossario/">📖</a>
-<a href="https://acarolmourad-commits.github.io/asf-comunidade/">💜</a>
-<a href="https://acarolmourad-commits.github.io/asf-seguranca/">🛟</a>
-<a href="https://acarolmourad-commits.github.io/asf-quiz/">🧠</a>
-<a href="https://acarolmourad-commits.github.io/asf-equipamento/">🏄</a>
-<a href="https://acarolmourad-commits.github.io/asf-nutricao/">🥑</a>
-<a href="https://acarolmourad-commits.github.io/asf-viagens/">✈️</a>
-<a href="https://acarolmourad-commits.github.io/asf-historia/">📜</a>
-<a href="https://acarolmourad-commits.github.io/asf-respira/">🫁</a>
-<a href="https://acarolmourad-commits.github.io/asf-diario/">📓</a>
-</nav>
-<header><h1>📐 ASF Volume</h1><p>Descubra o volume ideal da sua prancha em segundos</p></header>
+<header><h1>📐 ASF Volume</h1><p>Calculadora interativa de volume ideal de prancha por peso e nível</p></header>
+<nav><a href="https://acarolmourad-commits.github.io/asf-app/">🏄‍♀️ ASF App</a>
+<a href="https://acarolmourad-commits.github.io/asf-praias/">Praias</a>
+<a href="https://acarolmourad-commits.github.io/asf-previsao/">Previsao</a>
+<a href="https://acarolmourad-commits.github.io/asf-treino/">Treino</a>
+<a href="https://acarolmourad-commits.github.io/asf-eventos/">Eventos</a>
+<a href="https://acarolmourad-commits.github.io/asf-glossario/">Glossario</a>
+<a href="https://acarolmourad-commits.github.io/asf-seguranca/">Seguranca</a>
+<a href="https://acarolmourad-commits.github.io/asf-comunidade/">Comunidade</a>
+<a href="https://acarolmourad-commits.github.io/asf-equipamento/">Equipamento</a>
+<a href="https://acarolmourad-commits.github.io/asf-quiz/">Quiz</a>
+<a href="https://acarolmourad-commits.github.io/asf-nutricao/">Nutricao</a>
+<a href="https://acarolmourad-commits.github.io/asf-historia/">Historia</a>
+<a href="https://acarolmourad-commits.github.io/asf-viagens/">Viagens</a>
+<a href="https://acarolmourad-commits.github.io/asf-bemestar/">Bemestar</a>
+<a href="https://acarolmourad-commits.github.io/asf-diario/">Diario</a>
+<a href="https://acarolmourad-commits.github.io/asf-eco/">Eco</a>
+<a href="https://acarolmourad-commits.github.io/asf-kids/">Kids</a>
+<a href="https://acarolmourad-commits.github.io/asf-mental/">Mental</a>
+<a href="https://acarolmourad-commits.github.io/asf-ranking/">Ranking</a>
+<a href="https://acarolmourad-commits.github.io/asf-respira/">Respira</a>
+<a href="https://acarolmourad-commits.github.io/asf-sos/">Sos</a>
+<a href="https://acarolmourad-commits.github.io/asf-yoga/">Yoga</a></nav>
 <main>
-<div class="card">
-<label>Seu peso: <b id="wv">60</b> kg</label>
-<input type="range" id="w" min="40" max="100" value="60" oninput="calc()">
-<label>Seu nível</label>
-<div class="lv">
-<button class="on" data-f="1.0" onclick="setL(this)">🌱 Iniciante</button>
-<button data-f="0.55" onclick="setL(this)">🌊 Intermediária</button>
-<button data-f="0.38" onclick="setL(this)">🏆 Avançada</button>
-</div>
-</div>
-<div class="result">
-<p style="font-size:13px;color:#567">Volume recomendado</p>
-<p class="v"><span id="vol">60</span> L</p>
-<p style="font-size:13px;margin-top:8px" id="sug">Soft top 8'0" — estável e perfeita para aprender 💙</p>
-</div>
-<p style="font-size:12px;color:#789;margin-top:14px;text-align:center">Depois de escolher, veja os cuidados no <a href="https://acarolmourad-commits.github.io/asf-equipamento/">ASF Equipamento</a> e registre suas sessões no <a href="https://acarolmourad-commits.github.io/asf-diario/">ASF Diário</a>.</p>
+<div class="card"><h2>Calculadora de Volume de Prancha</h2>
+<label>Seu peso (kg)</label><input id="peso" type="number" placeholder="60">
+<label>Nível</label><select id="nivel"><option value="0.9">Iniciante</option><option value="0.65">Intermediária</option><option value="0.45">Avançada</option><option value="0.38">Pro</option></select>
+<button onclick="calc()">Calcular</button><h3 id="res" style="margin-top:.8rem;color:var(--rosa)"></h3></div>
+<div class="card"><h2>🌐 Ecossistema ASF</h2><p>Este app faz parte da constelação ASF — Associação de Surf Feminino. Ganhe XP aqui e veja seu progresso no <a href="https://acarolmourad-commits.github.io/asf-ranking/">ASF Ranking</a>. App principal: <a href="https://acarolmourad-commits.github.io/asf-app/">ASF App</a>.</p></div>
 </main>
-<footer>Parte da constelação ASF • <a href="https://acarolmourad-commits.github.io/asf-app/">Voltar ao app principal</a></footer>
+<div class="xp">⭐ XP: <span id="xp">0</span></div>
+<footer>ASF — Associação de Surf Feminino · Feito com 🌊 e 💜 · <a href="https://acarolmourad-commits.github.io/asf-app/">asf-app</a></footer>
 <script>
-let f=1.0;
-function setL(b){document.querySelectorAll('.lv button').forEach(x=>x.classList.remove('on'));b.classList.add('on');f=parseFloat(b.dataset.f);calc()}
-function calc(){
- const w=parseInt(document.getElementById('w').value);document.getElementById('wv').textContent=w;
- const v=Math.round(w*f);document.getElementById('vol').textContent=v;
- const s=document.getElementById('sug');
- if(f>=1)s.textContent='Soft top 8\'0"–9\'0" — estável e perfeita para aprender 💙';
- else if(f>=0.55)s.textContent='Funboard ou longboard 7\'0"–7\'6" — evolução com diversão 🌊';
- else s.textContent='Prancha performance 5\'8"–6\'2" — manobras e radicalidade 🏆';
-}
-calc();
+const XP=()=>parseInt(localStorage.getItem('asf_xp')||'0');
+function addXP(n){localStorage.setItem('asf_xp',XP()+n);document.getElementById('xp').textContent=XP();}
+document.getElementById('xp').textContent=XP();
+function calc(){const p=parseFloat(document.getElementById('peso').value);const f=parseFloat(document.getElementById('nivel').value);if(!p)return;const v=(p*f).toFixed(1);document.getElementById('res').textContent=`Volume ideal: ~${v} litros 🏄‍♀️`;addXP(5);}
 </script>
 </body>
 </html>
