@@ -3,46 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASF Volume — ASF</title>
-<meta name="description" content="Calculadora interativa de volume ideal de prancha por peso e nível">
+<title>ASF Volume — A ciência do volume da prancha | ASF</title>
+<meta name="description" content="Calculadora de volume ideal + a ciência por trás: flutuação, densidade, como o volume afeta remada, drop e manobras. Guia completo da rede ASF.">
 <style>
 :root{--rosa:#ff4d8d;--roxo:#7b2ff7;--areia:#fff5ec;--mar:#00c2cb}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
 body{background:linear-gradient(160deg,#fff5ec,#ffe3f1 60%,#e0f7fa);min-height:100vh;color:#333}
 header{background:linear-gradient(90deg,var(--rosa),var(--roxo));color:#fff;padding:2rem 1rem;text-align:center}
 header h1{font-size:2rem} header p{opacity:.9;margin-top:.4rem}
-nav{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;padding:.8rem;background:#fff;box-shadow:0 2px 8px #0001;position:sticky;top:0;z-index:10}
-nav a{background:var(--areia);border:1px solid #ffd3e6;color:#c2185b;padding:.3rem .7rem;border-radius:20px;font-size:.78rem;text-decoration:none}
-nav a:hover{background:var(--rosa);color:#fff}
 main{max-width:760px;margin:1.5rem auto;padding:0 1rem}
 .card{background:#fff;border-radius:16px;padding:1.4rem;box-shadow:0 4px 16px #7b2ff720;margin-bottom:1.2rem}
 .card h2{color:var(--roxo);margin-bottom:.6rem;font-size:1.2rem}
+.card h3{color:var(--rosa);margin:.9rem 0 .3rem;font-size:1rem}
+.card p,.card li{font-size:14px;line-height:1.65;margin-bottom:.4rem}
+.card ul,.card ol{padding-left:1.2rem}
 button{background:linear-gradient(90deg,var(--rosa),var(--roxo));color:#fff;border:none;padding:.6rem 1.2rem;border-radius:24px;font-size:1rem;cursor:pointer}
 button:hover{opacity:.85}
 input,select,textarea{padding:.5rem;border:1px solid #ddd;border-radius:10px;width:100%;margin:.3rem 0;font-size:1rem}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:.6rem}
+th,td{padding:7px 6px;text-align:left;border-bottom:1px solid #f0e6f6}
+th{font-size:11px;text-transform:uppercase;color:var(--roxo)}
 .xp{position:fixed;bottom:1rem;right:1rem;background:#fff;border:2px solid var(--rosa);border-radius:24px;padding:.4rem 1rem;font-weight:bold;color:var(--roxo);box-shadow:0 4px 12px #0002}
+.muted{color:#777;font-size:12.5px}
+.res{background:#fdf0f7;border-radius:12px;padding:1rem;margin-top:.8rem;font-size:14px;line-height:1.6}
 footer{text-align:center;padding:2rem;font-size:.8rem;color:#888}
 </style>
 <link rel="canonical" href="https://acarolmourad-commits.github.io/asf-volume/">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"ASF Volume","url":"https://acarolmourad-commits.github.io/asf-volume/","applicationCategory":"SportsApplication","operatingSystem":"Web","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"ASF — Associação Surf Feminino","url":"https://acarolmourad-commits.github.io/asf-app/"}}
 </script>
-
-<!-- ========== SEO Padrão Google (rede ASF) ========== -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<meta name="googlebot" content="index, follow">
 <meta name="author" content="ASF — Associação de Surf Feminino">
-<meta name="language" content="pt-BR">
 <meta name="theme-color" content="#ff4d8d">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ASF — Associação de Surf Feminino">
-<meta property="og:title" content="ASF Volume — ASF">
-<meta property="og:description" content="Calculadora interativa de volume ideal de prancha por peso e nível">
+<meta property="og:title" content="ASF Volume — A ciência do volume da prancha | ASF">
+<meta property="og:description" content="Calculadora de volume ideal + a física da flutuação explicada: como litros afetam remada, drop e evolução">
 <meta property="og:url" content="https://acarolmourad-commits.github.io/asf-volume/">
 <meta property="og:locale" content="pt_BR">
-<meta name="twitter:title" content="ASF Volume — ASF">
-<meta name="twitter:description" content="Calculadora interativa de volume ideal de prancha por peso e nível">
-<!-- ========== Fim SEO ========== -->
 <meta property="og:image" content="https://acarolmourad-commits.github.io/thumbnails/asf-volume.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -51,14 +49,51 @@ footer{text-align:center;padding:2rem;font-size:.8rem;color:#888}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1643806355443576" crossorigin="anonymous"></script>
 </head>
 <body>
-<header><h1>📐 ASF Volume</h1><p>Calculadora interativa de volume ideal de prancha por peso e nível</p></header>
+<header><h1>📐 ASF Volume</h1><p>A ciência do volume da prancha — calcule o seu e entenda o porquê</p></header>
 
 <main>
-<div class="card"><h2>Calculadora de Volume de Prancha</h2>
+<div class="card"><h2>🧮 Calculadora de volume ideal</h2>
 <label>Seu peso (kg)</label><input id="peso" type="number" placeholder="60">
-<label>Nível</label><select id="nivel"><option value="0.9">Iniciante</option><option value="0.65">Intermediária</option><option value="0.45">Avançada</option><option value="0.38">Pro</option></select>
-<button onclick="calc()">Calcular</button><h3 id="res" style="margin-top:.8rem;color:var(--rosa)"></h3></div>
-<div class="card"><h2>🌐 Ecossistema ASF</h2><p>Este app faz parte da constelação ASF — Associação de Surf Feminino. Ganhe XP aqui e veja seu progresso no <a href="https://acarolmourad-commits.github.io/asf-ranking/">ASF Ranking</a>. App principal: <a href="https://acarolmourad-commits.github.io/asf-app/">ASF App</a>.</p></div>
+<label>Nível</label><select id="nivel"><option value="0.9">Iniciante (primeiras sessões)</option><option value="0.65">Intermediária (já pega onda sozinha)</option><option value="0.45">Avançada (manobras consistentes)</option><option value="0.38">Performance/competição</option></select>
+<label>Tipo de prancha desejado</label><select id="tipo"><option value="long">Longboard (9'0"+)</option><option value="fun">Funboard/Evolution (7'–8')</option><option value="short">Shortboard (5'8"–6'4")</option></select>
+<button onclick="calc()">Calcular (+5 XP)</button>
+<div id="res"></div>
+</div>
+
+<div class="card"><h2>🔬 A física por trás do volume (Arquimedes na praia)</h2>
+<p>O volume da prancha, medido em <b>litros</b>, diz quanta água ela desloca. Pelo princípio de Arquimedes, <b>1 litro de volume sustenta ~1 kg</b> de peso na água. Uma prancha de 40L empurra para cima com ~40 kgf quando totalmente submersa — é por isso que uma surfista de 60 kg numa prancha de 55L flutua com o peito quase fora d'água, e na mesma prancha de 28L afunda até a cintura.</p>
+<h3>A razão volume/peso (L/kg)</h3>
+<p>Mais importante que o número absoluto é a <b>razão litros por quilo</b>:</p>
+<ul>
+<li><b>0,9–1,0 L/kg</b> — flutuação total: remada fácil, ondas entram quase sozinhas. Ideal para aprender.</li>
+<li><b>0,6–0,7 L/kg</b> — equilíbrio entre estabilidade e resposta. Faixa de transição.</li>
+<li><b>0,4–0,5 L/kg</b> — a prancha afunda parcialmente parada; exige remada forte, mas responde instantaneamente nas manobras.</li>
+<li><b>0,35–0,4 L/kg</b> — zona de atletas de alto rendimento; cada litro a menos vira radicalidade.</li>
+</ul>
+<h3>Por que isso muda tudo</h3>
+<p><b>Remada:</b> mais volume = mais área de contato planando = você alcança a velocidade da onda com menos braçadas. <b>Drop:</b> volume excessivo numa onda cavada faz a prancha "boiar" na hora de entrar; volume de menos faz o bico afundar. <b>Duck dive:</b> abaixo de ~35L a prancha mergulha sob a espuma; acima de ~50L é fisicamente quase impossível afundá-la — por isso pranchões passam "por cima" ou viram de lado (tartaruga). <b>Estabilidade:</b> volume distribuído na largura e no bico perdoo erros de posicionamento.</p>
+</div>
+
+<div class="card"><h2>📊 Tabela de referência por peso (faixas usuais)</h2>
+<table><tr><th>Peso</th><th>Iniciante (~0,9)</th><th>Interm. (~0,65)</th><th>Avançada (~0,45)</th></tr>
+<tr><td>50 kg</td><td>45–50 L</td><td>32–34 L</td><td>22–24 L</td></tr>
+<tr><td>60 kg</td><td>54–60 L</td><td>39–41 L</td><td>27–29 L</td></tr>
+<tr><td>70 kg</td><td>63–70 L</td><td>45–47 L</td><td>31–33 L</td></tr>
+<tr><td>80 kg</td><td>72–80 L</td><td>52–54 L</td><td>36–38 L</td></tr>
+</table>
+<p class="muted" style="margin-top:.6rem">Faixas de referência usadas por shapers brasileiros. Condição física, idade e o mar da sua região deslocam a faixa: mar cheio e mexido pede +10% de volume; mar de força constante permite -10%.</p>
+</div>
+
+<div class="card"><h2>🧠 Erros clássicos (e como evitar)</h2>
+<ol>
+<li><b>Descer volume rápido demais.</b> O erro nº 1 da evolução: trocar 50L por 30L porque "a prancha é linda". Resultado: pega 2 ondas por sessão e estagna. Regra prática: reduza no máximo 10–15% do volume por troca.</li>
+<li><b>Ignorar a densidade do material.</b> EPS (epóxi) é ~15% mais flutuante que PU (poliuretano) no mesmo volume — uma EPS de 35L flutua como uma PU de 40L.</li>
+<li><b>Volume sem distribuição.</b> 40L numa prancha larga e grossa ≠ 40L numa fina de performance. Pergunte onde o volume está concentrado (bico? centro?).</li>
+<li><b>Esquecer o mar local.</b> Ondas fracas e gordas do verão do litoral norte pedem mais volume que os swells de inverno de Maresias.</li>
+</ol>
+</div>
+
+<div class="card"><h2>🌐 Ecossistema ASF</h2><p>Este app faz parte da constelação ASF — Associação de Surf Feminino. Combine com a <a href="https://acarolmourad-commits.github.io/asf-swell/">Matemática do Surf</a> (qual swell pede qual prancha) e veja seu progresso no <a href="https://acarolmourad-commits.github.io/asf-ranking/">ASF Ranking</a>.</p></div>
 </main>
 <div class="xp">⭐ XP: <span id="xp">0</span></div>
 <footer>ASF — Associação de Surf Feminino · Feito com 🌊 e 💜 · <a href="https://acarolmourad-commits.github.io/asf-app/">asf-app</a></footer>
@@ -66,16 +101,27 @@ footer{text-align:center;padding:2rem;font-size:.8rem;color:#888}
 const XP=()=>parseInt(localStorage.getItem('asf_xp')||'0');
 function addXP(n){localStorage.setItem('asf_xp',XP()+n);document.getElementById('xp').textContent=XP();}
 document.getElementById('xp').textContent=XP();
-function calc(){const p=parseFloat(document.getElementById('peso').value);const f=parseFloat(document.getElementById('nivel').value);if(!p)return;const v=(p*f).toFixed(1);document.getElementById('res').textContent=`Volume ideal: ~${v} litros 🏄‍♀️`;addXP(5);}
+const TIPOS={long:{nome:'Longboard',extra:'Com 9\'0"+, a largura e o bico arredondado somam flutuação: você pode surfar com razão L/kg menor que a calculadora sugere e ainda remar fácil.'},
+fun:{nome:'Funboard',extra:'O meio-termo perfeito para a transição: mantém ~85% da flutuação de um longboard com bem mais mobilidade.'},
+short:{nome:'Shortboard',extra:'Abaixo de ~35L o duck dive entra no jogo. Certifique-se de que sua remada está forte antes de descer volume.'}};
+function calc(){
+const p=parseFloat(document.getElementById('peso').value);
+const f=parseFloat(document.getElementById('nivel').value);
+const t=document.getElementById('tipo').value;
+if(!p)return;
+const v=p*f, vmin=(v*0.95).toFixed(1), vmax=(v*1.08).toFixed(1);
+document.getElementById('res').innerHTML=`<div class="res"><b style="color:var(--rosa);font-size:17px">Volume ideal: ~${v.toFixed(1)} litros</b> (faixa segura: ${vmin}–${vmax} L)<br>
+Razão volume/peso: <b>${f} L/kg</b> — ${f>=0.9?'flutuação total, perfeita para aprender':f>=0.65?'equilíbrio entre estabilidade e resposta':f>=0.45?'exige remada forte, entrega manobras':'zona de alto rendimento'}.<br>
+<b>${TIPOS[t].nome}:</b> ${TIPOS[t].extra}</div>`;
+addXP(5);
+}
 </script>
-
-<!-- ASF Ecossistema Nav v2 (rede completa, 21 sites) -->
 <script>
 (function(){
   function injectNav(){
     if(document.querySelector('.asf-sat-nav'))return;
     var old=document.querySelector('.asf-rede-nav');if(old)old.remove();
-    var sites=[["asf-app","\u{1F30A} App"],["asf-praias","\u{1F3D6}\uFE0F Praias"],["asf-previsao","\u{1F4C8} Previs\u00E3o"],["asf-treino","\u{1F3CB}\uFE0F Treino"],["asf-eventos","\u{1F4C5} Eventos"],["asf-glossario","\u{1F4D6} Gloss\u00E1rio"],["asf-comunidade","\u{1F4AC} Comunidade"],["asf-seguranca","\u{1F6FA} Seguran\u00E7a"],["asf-equipamento","\u{1F3C4}\u200D\u2640\uFE0F Equipamento"],["asf-quiz","\u{1F9E0} Quiz"],["asf-nutricao","\u{1F957} Nutri\u00E7\u00E3o"],["asf-viagens","\u{2708}\uFE0F Viagens"],["asf-historia","\u{1F3C6} Hist\u00F3ria"],["asf-bemestar","\u{1F9D8}\u200D\u2640\uFE0F Bem-estar"],["asf-ranking","\u{1F947} Ranking"],["asf-diario","\u{1F4D3} Di\u00E1rio"],["asf-respira","\u{1FAC1} Respira"],["asf-volume","\u{1F4D0} Volume"],["asf-yoga","\u{1F9D8} Yoga"],["asf-sos","\u{1F198} SOS"],["asf-eco","\u{1F331} Eco"]];
+    var sites=[["asf-app","🌊 App"],["asf-praias","🏖️ Praias"],["asf-previsao","🌈 Previsão"],["asf-treino","🏋️ Treino"],["asf-eventos","📅 Eventos"],["asf-glossario","📖 Glossário"],["asf-comunidade","👬 Comunidade"],["asf-seguranca","🛺 Segurança"],["asf-equipamento","🏄‍♀️ Equipamento"],["asf-quiz","🧠 Quiz"],["asf-nutricao","🥗 Nutrição"],["asf-viagens","✈️ Viagens"],["asf-historia","🌆 História"],["asf-bemestar","🧘‍♀️ Bem-estar"],["asf-ranking","🏇 Ranking"],["asf-diario","📓 Diário"],["asf-respira","🫁 Respira"],["asf-volume","📐 Volume"],["asf-yoga","🧘 Yoga"],["asf-sos","🆘 SOS"],["asf-eco","🌱 Eco"]];
     var nav=document.createElement('nav');
     nav.className='asf-sat-nav';
     nav.setAttribute('aria-label','Ecossistema ASF');
